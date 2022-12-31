@@ -32,4 +32,22 @@ $ docker container top ID/NAME
 ```console
 $ docker container rm ID/NAME
 ```
+### Start a new container interactively
+```console
+$ docker container run -it ID/NAME bash
+```
 
+### Run additional command in additional container
+```console
+$ docker container exec -it 
+```
+
+### Start existing container (before with run command)
+```console
+$ docker container start -ai ID/NAME 
+```
+
+### List docker images on system
+```console
+$ docker image ls
+```
