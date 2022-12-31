@@ -4,7 +4,7 @@
 
 ### Start docker container based on an image
 ```console
-$ docker container run --publish 80:80 --detach --name webhost --network network_name nginx
+$ docker container run --rm --publish 80:80 --detach --name webhost --network network_name nginx
 ```
 Opened port 80 on the host IP
 Routes that traffic to the container IP, port 80
@@ -101,4 +101,21 @@ $ docker network connect
 ### Detach a network from container
 ```console
 $ docker network disconnect
+```
+
+## Prune
+
+### Clean up just "dangling" images
+```console
+$ docker image prune
+```
+
+### Remove all images you're not using
+```console
+$ docker image prune -a
+```
+
+### Clean up everyting
+```console
+$ docker system prune
 ```
