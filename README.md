@@ -4,7 +4,7 @@
 
 ### Start docker container based on an image
 ```console
-$ docker container run --publish 80:80 --detach --name webhost nginx
+$ docker container run --publish 80:80 --detach --name webhost --network network_name nginx
 ```
 Opened port 80 on the host IP
 Routes that traffic to the container IP, port 80
@@ -56,7 +56,7 @@ $ docker container port ID/NAME
 
 ### Inspect container
 ```console
-$ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' ID/NAME
+$ docker container inspect ID/NAME --format '{{ .NetworkSettings.IPAddress }}' ID/NAME
 ```
 
 ## Images
@@ -64,6 +64,16 @@ $ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' ID/NAME
 ### List docker images on system
 ```console
 $ docker image ls
+```
+
+### Get image history
+```console
+$ docker history NAME
+```
+
+### Build image
+```console
+$ docker image build -t custom_nginx .
 ```
 
 ## Network
@@ -75,12 +85,12 @@ $ docker network ls
 
 ### Inspect a network
 ```console
-$ docker network inspect
+$ docker network inspect ID/NAME
 ```
 
 ### Create a network
 ```console
-$ docker network create --driver
+$ docker network create NAME
 ```
 
 ### Attach a network to container
