@@ -5,6 +5,7 @@
 ### Start docker container based on an image
 ```console
 $ docker container run --rm --publish 80:80 --detach --name webhost --network network_name nginx
+$ docker container run -d -p 5000:5000 pfdn/custom-node-js
 ```
 Opened port 80 on the host IP
 Routes that traffic to the container IP, port 80
@@ -74,6 +75,7 @@ $ docker history NAME
 ### Build image
 ```console
 $ docker image build -t custom_nginx .
+$ docker image build -t in29min/hello-world-node-js:0.0.2.RELEASE .
 ```
 
 ## Network
